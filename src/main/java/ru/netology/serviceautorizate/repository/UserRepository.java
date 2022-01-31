@@ -14,8 +14,11 @@ import static ru.netology.serviceautorizate.controller.Authorities.WRITE;
 @Repository
 public class UserRepository {
 
+    private static final String USER = "admin";
+    private static final String PASSWORD = "1234";
+
     public List<Authorities> getUserAuthorities(String user, String password) {
-        if (user.equals("admin") && password.equals("1234"))
+        if (user.equals(USER) && password.equals(PASSWORD))
             return Arrays.asList(READ, WRITE, DELETE);
         return new ArrayList<>();
     }
