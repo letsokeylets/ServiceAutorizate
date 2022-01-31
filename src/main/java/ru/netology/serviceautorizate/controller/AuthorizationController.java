@@ -22,13 +22,13 @@ public class AuthorizationController {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(InvalidCredentials.class)
-    public String icHandle(InvalidCredentials e) {
+    public String invalidCredentialsHandle(InvalidCredentials e) {
         return e.getMessage();
     }
 
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(UnauthorizedUser.class)
-    public String icHandle(UnauthorizedUser e) {
+    public String unauthorizedUserHandle(UnauthorizedUser e) {
         return e.getMessage();
     }
 }
