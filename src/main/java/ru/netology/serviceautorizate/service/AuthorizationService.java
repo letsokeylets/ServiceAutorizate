@@ -1,5 +1,6 @@
 package ru.netology.serviceautorizate.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.netology.serviceautorizate.advice.InvalidCredentials;
 import ru.netology.serviceautorizate.advice.UnauthorizedUser;
@@ -9,12 +10,10 @@ import ru.netology.serviceautorizate.repository.UserRepository;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class AuthorizationService {
     private final UserRepository userRepository;
 
-    public AuthorizationService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     public List<Authorities> getAuthorities(String user, String password) {
         if (isEmpty(user) || isEmpty(password)) {
